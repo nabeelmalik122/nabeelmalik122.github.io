@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nabeel Muhammad | Frontend Developer</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', sans-serif; background: #0f0f0f; color: #e5e5e5; }
+  a { text-decoration: none; color: inherit; }
+
+  nav {
+    position: fixed; top: 0; width: 100%; padding: 1.2rem 2rem;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(15,15,15,0.9); backdrop-filter: blur(10px);
+    border-bottom: 1px solid #222; z-index: 100;
+  }
+  nav .logo { font-size: 1.2rem; font-weight: 700; color: #00d4aa; }
+  nav ul { list-style: none; display: flex; gap: 2rem; }
+  nav ul a { font-size: 0.9rem; color: #aaa; transition: color 0.3s; }
+  nav ul a:hover { color: #00d4aa; }
+
+  section { padding: 5rem 2rem; max-width: 900px; margin: 0 auto; }
+
+  /* Hero */
+  #hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding-top: 6rem; }
+  .tag { display: inline-block; background: #00d4aa22; color: #00d4aa; border: 1px solid #00d4aa44; padding: 0.3rem 1rem; border-radius: 20px; font-size: 0.85rem; margin-bottom: 1.5rem; }
+  #hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; line-height: 1.1; margin-bottom: 1rem; }
+  #hero h1 span { color: #00d4aa; }
+  #hero p { font-size: 1.1rem; color: #aaa; max-width: 550px; margin-bottom: 2rem; line-height: 1.7; }
+  .btn { display: inline-block; padding: 0.8rem 2rem; border-radius: 8px; font-size: 0.95rem; font-weight: 600; transition: all 0.3s; cursor: pointer; }
+  .btn-primary { background: #00d4aa; color: #0f0f0f; margin-right: 1rem; }
+  .btn-primary:hover { background: #00b899; }
+  .btn-outline { border: 1px solid #444; color: #e5e5e5; }
+  .btn-outline:hover { border-color: #00d4aa; color: #00d4aa; }
+
+  /* About */
+  #about { border-top: 1px solid #1e1e1e; }
+  .section-title { font-size: 0.85rem; color: #00d4aa; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.8rem; }
+  #about h2 { font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem; }
+  #about p { color: #aaa; line-height: 1.8; max-width: 650px; }
+
+  /* Skills */
+  #skills { border-top: 1px solid #1e1e1e; }
+  #skills h2 { font-size: 2rem; font-weight: 700; margin-bottom: 2rem; }
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 1rem; }
+  .skill-card { background: #161616; border: 1px solid #222; border-radius: 10px; padding: 1.2rem; text-align: center; transition: border-color 0.3s; }
+  .skill-card:hover { border-color: #00d4aa; }
+  .skill-card .icon { font-size: 2rem; margin-bottom: 0.5rem; }
+  .skill-card p { font-size: 0.9rem; color: #ccc; }
+
+  /* Projects */
+  #projects { border-top: 1px solid #1e1e1e; }
+  #projects h2 { font-size: 2rem; font-weight: 700; margin-bottom: 2rem; }
+  .project-card { background: #161616; border: 1px solid #222; border-radius: 12px; padding: 1.8rem; margin-bottom: 1.5rem; transition: border-color 0.3s; }
+  .project-card:hover { border-color: #00d4aa; }
+  .project-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; color: #fff; }
+  .project-card p { color: #aaa; font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem; }
+  .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .tag-small { background: #00d4aa15; color: #00d4aa; border: 1px solid #00d4aa33; padding: 0.2rem 0.7rem; border-radius: 20px; font-size: 0.8rem; }
+  .project-link { display: inline-block; margin-top: 1rem; color: #00d4aa; font-size: 0.9rem; }
+  .project-link:hover { text-decoration: underline; }
+
+  /* Contact */
+  #contact { border-top: 1px solid #1e1e1e; text-align: center; }
+  #contact h2 { font-size: 2rem; font-weight: 700; margin-bottom: 1rem; }
+  #contact p { color: #aaa; margin-bottom: 2rem; }
+  .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+
+  footer { text-align: center; padding: 2rem; color: #555; font-size: 0.85rem; border-top: 1px solid #1e1e1e; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">NM</div>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section id="hero">
+  <div class="tag">Available for Freelance Work</div>
+  <h1>Hi, I'm <span>Nabeel Muhammad</span><br>Frontend Developer</h1>
+  <p>I build clean, fast, and responsive websites using React.js and Tailwind CSS. Based in Pakistan, working with clients worldwide.</p>
+  <div>
+    <a href="#projects" class="btn btn-primary">View My Work</a>
+    <a href="#contact" class="btn btn-outline">Hire Me</a>
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-title">About Me</div>
+  <h2>Passionate Frontend Developer</h2>
+  <p>I'm a Frontend Developer from Peshawar, Pakistan, completing my BCS degree in Computer Science. I specialize in building modern web applications using React.js, Tailwind CSS, and Node.js. I combine my technical skills with AI tools to deliver high-quality results faster. I'm available for freelance projects worldwide and always focused on client satisfaction.</p>
+</section>
+
+<section id="skills">
+  <div class="section-title">Skills</div>
+  <h2>Technologies I Use</h2>
+  <div class="skills-grid">
+    <div class="skill-card"><div class="icon">⚛️</div><p>React.js</p></div>
+    <div class="skill-card"><div class="icon">🎨</div><p>Tailwind CSS</p></div>
+    <div class="skill-card"><div class="icon">🌐</div><p>HTML & CSS</p></div>
+    <div class="skill-card"><div class="icon">⚡</div><p>JavaScript</p></div>
+    <div class="skill-card"><div class="icon">🟢</div><p>Node.js</p></div>
+    <div class="skill-card"><div class="icon">🍃</div><p>MongoDB</p></div>
+    <div class="skill-card"><div class="icon">🤖</div><p>AI Tools</p></div>
+    <div class="skill-card"><div class="icon">📱</div><p>Responsive Design</p></div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="section-title">Projects</div>
+  <h2>My Work</h2>
+
+  <div class="project-card">
+    <h3>SpamGuard - Email Spam Detector</h3>
+    <p>A machine learning powered web application that detects spam emails with high accuracy. Built as Final Year Project for BCS degree. Features real-time email analysis and classification.</p>
+    <div class="tags">
+      <span class="tag-small">React.js</span>
+      <span class="tag-small">Node.js</span>
+      <span class="tag-small">Machine Learning</span>
+      <span class="tag-small">MongoDB</span>
+    </div>
+    <a href="https://github.com/malliknabeel04" class="project-link">View on GitHub →</a>
+  </div>
+
+  <div class="project-card">
+    <h3>Responsive Business Website</h3>
+    <p>A fully responsive modern business website with clean UI, smooth animations, and mobile-first design. Built with React.js and Tailwind CSS.</p>
+    <div class="tags">
+      <span class="tag-small">React.js</span>
+      <span class="tag-small">Tailwind CSS</span>
+      <span class="tag-small">JavaScript</span>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-title">Contact</div>
+  <h2>Let's Work Together</h2>
+  <p>I'm available for freelance projects. Feel free to reach out!</p>
+  <div class="contact-links">
+    <a href="https://www.fiverr.com/malliknabeel04" class="btn btn-primary">Hire on Fiverr</a>
+    <a href="https://github.com/malliknabeel04" class="btn btn-outline">GitHub</a>
+  </div>
+</section>
+
+<footer>
+  <p>Built by Nabeel Muhammad &copy; 2026</p>
+</footer>
+
+</body>
+</html>
